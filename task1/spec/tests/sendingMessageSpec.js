@@ -14,25 +14,25 @@ const driver = new webdriver.Builder()
 driver.manage().window().maximize();
 
 
-describe('Scenario "Sending message":', function() {
+describe('Scenario "Sending message":', ()=> {
 
-  afterAll(function() {
-       driver.quit();
+  afterAll(()=>{
+      driver.quit();
   });
 
-  beforeEach(function() {
+  beforeEach(()=>{
       jasmine.DEFAULT_TIMEOUT_INTERVAL = 30000;
   });
 
 
-  it("should open home page", function(done) {
+  it("should open home page", (done)=>{
       driver.get(world.guestPage.url)
       .then( ()=> driver.getTitle() )
       .then( title=>expect(title).toBe('Welcome! | VK') )
       .then( ()=>done() );
   });
 
-  it("should login", function(done) {
+  it("should login", (done)=>{
       driver.wait(until.elementLocated(world.guestPage.login))
       .then( ()=>driver.findElement(world.guestPage.login).sendKeys(login) )
       .then( ()=>driver.findElement(world.guestPage.password).sendKeys(password) )
@@ -40,19 +40,19 @@ describe('Scenario "Sending message":', function() {
       .then( ()=>done() );
   });
 
-  it("go to list of friends", function(done) {
+  it("go to list of friends", (done)=>{
       driver.wait(until.elementLocated(world.feedPage.leftBar.friends))
       .then(()=> driver.findElement(world.feedPage.leftBar.friends).click())
       .then( ()=>done() );
   });
 
-  it("go to profile recipient", function(done) {
+  it("go to profile recipient", (done)=>{
     driver.wait(until.elementLocated(world.friendsPage.nameTestFriend))
     .then(()=>driver.findElement(world.friendsPage.nameTestFriend).click())
     .then( ()=>done() );
   });
 
-  it("send message", function(done) {
+  it("send message", (done)=>{
     driver.wait(until.elementLocated(world.userPage.writeMessageBtn))
     .then( ()=>driver.findElement(world.userPage.writeMessageBtn).click() )
     .then( ()=> driver.wait(until.elementLocated(world.userPage.txtAreaMsg)) )
