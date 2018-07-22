@@ -1,12 +1,11 @@
 "use strict";
 
-const world = require('../pages/world');
+const world = require('../pages/world'),
+      path = require('path');
 const webdriver = require('selenium-webdriver'),
-    until = webdriver.until;
+      until = webdriver.until;
 
-const login = "login";
-const password = "password";
-
+const {login, password} = require(path.resolve('creds.json'));
 const driver = new webdriver.Builder()
     .forBrowser('chrome')
     .build();

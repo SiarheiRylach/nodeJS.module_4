@@ -4,7 +4,7 @@
   "description": "test scenario for vk.com",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "e2e": "node_modules/.bin/jasmine"
   },
   "author": "Siarhei Rylach",
   "license": "ISC",
