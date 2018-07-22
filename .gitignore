@@ -1,5 +1,6 @@
 task1/node_modules/
 task1/.idea/
+task1/creds.json
 task2/node_modules/
 task2/.idea/
 task2/debug.log
