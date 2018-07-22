@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "postinstall": "npm run update",
     "update": "webdriver-manager update",
     "e2e": "protractor protractor.config.js"
   },
